@@ -144,14 +144,13 @@ Processor B has nine physical qubits and uses the supplied challenge topology. I
 
 ### 3.3 Processor D
 
+Processor D was designed as a custom nine-qubit coupling topology to support the six-logical-qubit Max-Cut experiment while satisfying the challenge's connectivity constraints. The topology contains twelve couplings, is connected, and has a maximum vertex degree of three, remaining within the permitted maximum degree of four.
 
+The design provides more physical qubits than the six required by the logical problem, giving the transpiler additional placement options when mapping the circuit to the coupling graph. Connectivity allows interactions between different parts of the topology to be routed through available couplings, although the resulting CX and SWAP counts depend on the particular mapping and circuit. The topology therefore provides a useful test case for investigating the relationship between connectivity, routing overhead, and noisy simulation performance.
 
-Processor D is a custom nine-qubit topology with twelve couplings. Its graph is connected and has maximum degree three. Its configured basis gates are `rz`, `sx`, `x`, and `cx`. The configuration is stored in `processors/processor\_D.json`.
+The configured basis gates are `rz`, `sx`, `x`, and `cx`. The single-qubit, two-qubit, and readout error probabilities are 0.001, 0.005, and 0.01, respectively, matching the configured challenge noise levels. These settings make it possible to compare Processor D with the supplied Processor B under the same stated noise assumptions.
 
-
-
-The final Processor D configuration is the one used by the benchmark scripts. Keeping a single authoritative configuration is important because changes in connectivity or noise parameters can change routing, transpiled resources, and simulation outcomes.
-
+The configuration is stored in `processors/processor_D.json`. The final configuration must remain fixed across the reported Processor D benchmarks so that the coupling graph, noise settings, compiled resource counts, and simulation results remain consistent. The topology is evaluated through both QAOA performance and Bell-state experiments rather than assumed to be superior based on connectivity alone.
 
 
 ### 3.4 Noise and Reproducibility
