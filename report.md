@@ -179,17 +179,17 @@ The following table summarizes the measured results for the executable processor
 
 
 
-| Processor | Condition | Mean cut | Sample standard deviation | Approximation ratio | Best cut | Optimal-cut probability |
+| Processor | Condition | Mean cut | Sample standard deviation | Approximation ratio | Best cut | Best-cut ratio | Optimal-cut probability |
 
-|---|---|---:|---:|---:|---:|---:|
+|---|---|---:|---:|---:|---:|---:|---:|
 
-| B | Ideal | 15.6606 | 4.0763 | 0.7118 | 22 | 0.0730 |
+| B | Ideal | 15.6606 | 4.0763 | 0.7118 | 22 | 1.0000 | 0.0730 |
 
-| B | Noisy | 15.4326 | 4.2065 | 0.7015 | 22 | 0.0698 |
+| B | Noisy | 15.4326 | 4.2065 | 0.7015 | 22 |  1.0000 | 0.0698 |
 
-| D | Ideal | 15.5720 | 4.1068 | 0.7078 | 22 | 0.0679 |
+| D | Ideal | 15.5720 | 4.1068 | 0.7078 | 22 |  1.0000 | 0.0679 |
 
-| D | Noisy | 15.3633 | 4.2813 | 0.6983 | 22 | 0.0671 |
+| D | Noisy | 15.3633 | 4.2813 | 0.6983 | 22 |  1.0000 | 0.0671 |
 
 **Figure 1. Optimal Max-Cut partition for the PS-O1 instance.** The two node colors represent the two groups in the optimal assignment, with cut value 22.
 
