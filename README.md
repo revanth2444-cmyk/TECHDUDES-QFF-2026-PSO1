@@ -60,4 +60,4 @@ TECHDUDES
 
 ## AI-use disclosure
 
-Complete this section to accurately describe AI assistance used during development, analysis, debugging, or writing, in accordance with the challenge rules.
+AI assistance was used for development guidance, debugging support, experimental workflow organization, and preparation and editing of project documentation. The team reviewed the implementation, configuration files, and reported results against the project execution outputs. The team remains responsible for the submitted code, experiments, interpretation, and final report.
