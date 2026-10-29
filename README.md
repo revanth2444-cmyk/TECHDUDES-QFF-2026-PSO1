@@ -21,12 +21,12 @@ The final configuration is processors/processor_D.json.
 
 ## Main results
 
-| Processor | Condition | Mean cut | Approximation ratio | Optimal-cut probability |
-|---|---|---:|---:|---:|
-| B | Ideal | 15.6606 | 0.7118 | 0.0730 |
-| B | Noisy | 15.4326 | 0.7015 | 0.0698 |
-| D | Ideal | 15.5720 | 0.7078 | 0.0679 |
-| D | Noisy | 15.3633 | 0.6983 | 0.0671 |
+| Processor | Condition | Mean cut | Approximation ratio | Best cut | Best-cut ratio | Optimal-cut probability |
+|---|---|---:|---:|---:|---:|---:|
+| B | Ideal | 15.6606 | 0.7118 | 22 | 1.0000 | 0.0730 |
+| B | Noisy | 15.4326 | 0.7015 | 22 | 1.0000 | 0.0698 |
+| D | Ideal | 15.5720 | 0.7078 | 22 | 1.0000 | 0.0679 |
+| D | Noisy | 15.3633 | 4.2813 | 22 | 1.0000 | 0.0671 |
 
 Processor A is not executable for this problem because it has five physical qubits but the circuit requires six logical qubits.
 
