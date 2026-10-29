@@ -210,14 +210,9 @@ Processor B has a slightly higher measured mean cut than Processor D in both con
 
 ### 4.1 Random Baseline
 
+The exact uniform-random baseline was calculated by enumerating all 64 assignments of the six-vertex graph. Each edge crosses the cut with probability \(1/2\), so the expected cut value is half the sum of all edge weights: \(27/2 = 13.5\). The exact maximum cut is 22, giving an expected approximation ratio of \(13.5/22 \approx 0.6136\).
 
-
-A random baseline evaluated 4096 uniformly random assignments using seed 42. The observed mean cut was 13.5620, and the best observed cut was 22.
-
-
-
-The baseline mean is below the QAOA mean cuts reported for both executable processors. This provides a useful reference for the selected instance and sampling procedure. It does not establish that QAOA will outperform random sampling on every instance or under every experimental setting.
-
+For comparison, 4096 uniformly random assignments were also evaluated using seed 42. This sample had a mean cut of 13.5620 and a best observed cut of 22. The sampled mean is close to the exact expectation, as expected. Both baselines provide a reference for the selected instance; they do not establish that QAOA will outperform random sampling on every instance or under every experimental setting.
 
 
 ## 5. Circuit Resource Analysis
