@@ -8,7 +8,7 @@ The problem contains six vertices and nine weighted edges. The total edge weight
 
 ## Processor D
 
-Processor D has nine qubits and twelve couplings. Its topology is connected and has maximum degree three. It supports the six logical qubits required by PS-O1.
+Processor D has nine qubits and twelve couplings. Its topology is connected and has maximum degree four, satisfying the challenge's maximum-degree limit of four. It supports the six logical qubits required by PS-O1.
 
 Basis gates: rz, sx, x, cx.
 
@@ -48,11 +48,23 @@ These are simulation results, not measurements from physical quantum hardware.
 
 ## Environment setup
 
-Create and activate the virtual environment, then install dependencies:
+Create and activate a virtual environment, then install dependencies.
 
+**Windows (PowerShell):**
+
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+```
+
+**macOS / Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
 
 ## Team
 
