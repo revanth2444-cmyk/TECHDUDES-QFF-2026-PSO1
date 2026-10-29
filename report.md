@@ -144,7 +144,7 @@ Processor B has nine physical qubits and uses the supplied challenge topology. I
 
 ### 3.3 Processor D
 
-Processor D was designed as a custom nine-qubit coupling topology to support the six-logical-qubit Max-Cut experiment while satisfying the challenge's connectivity constraints. The topology contains twelve couplings, is connected, and has a maximum vertex degree of three, remaining within the permitted maximum degree of four.
+Processor D was designed as a custom nine-qubit coupling topology to support the six-logical-qubit Max-Cut experiment while satisfying the challenge's connectivity constraints.The topology contains twelve couplings, is connected, and has a maximum vertex degree of four, satisfying the challenge's permitted maximum degree of four.
 
 The design provides more physical qubits than the six required by the logical problem, giving the transpiler additional placement options when mapping the circuit to the coupling graph. Connectivity allows interactions between different parts of the topology to be routed through available couplings, although the resulting CX and SWAP counts depend on the particular mapping and circuit. The topology therefore provides a useful test case for investigating the relationship between connectivity, routing overhead, and noisy simulation performance.
 
