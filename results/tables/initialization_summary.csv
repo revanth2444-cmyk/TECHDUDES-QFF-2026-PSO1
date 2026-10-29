@@ -1,0 +1,2 @@
+initialization_count,seeds,mean_ideal_expected_cut,mean_approx_ratio,population_std_approx_ratio,sample_std_approx_ratio,best_seed,best_approx_ratio
+5,0;1;2;3;4,15.525749902292258,0.7057159046496482,0.0012509368330797207,0.0013985898971622813,2,0.7071628760115108

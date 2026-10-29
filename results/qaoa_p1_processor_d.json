@@ -1,0 +1,62 @@
+[
+  {
+    "processor": "Processor D",
+    "noisy": false,
+    "noise_model": "none",
+    "shots": 4096,
+    "seed_simulator": 42,
+    "exact_optimum": 22,
+    "best_initialization_seed": 2,
+    "gamma": 0.8130432230576655,
+    "beta": 1.1154984615119183,
+    "mean_cut": 15.572021484375,
+    "sample_std_cut": 4.10677850753079,
+    "best_sampled_cut": 22,
+    "approx_ratio": 0.7078191583806818,
+    "r_best": 1.0,
+    "p_opt": 0.06787109375,
+    "circuit_metrics": {
+      "processor": "Processor D",
+      "executable": true,
+      "logical_qubits": 6,
+      "physical_qubits": 9,
+      "logical_cx": 18,
+      "cx": 24,
+      "one_q_gates": 57,
+      "depth": 37,
+      "two_q_depth": 18,
+      "swaps": 2,
+      "cx_overhead": 6
+    }
+  },
+  {
+    "processor": "Processor D",
+    "noisy": true,
+    "noise_model": "official",
+    "shots": 4096,
+    "seed_simulator": 42,
+    "exact_optimum": 22,
+    "best_initialization_seed": 2,
+    "gamma": 0.8130432230576655,
+    "beta": 1.1154984615119183,
+    "mean_cut": 15.36328125,
+    "sample_std_cut": 4.281300382714692,
+    "best_sampled_cut": 22,
+    "approx_ratio": 0.6983309659090909,
+    "r_best": 1.0,
+    "p_opt": 0.067138671875,
+    "circuit_metrics": {
+      "processor": "Processor D",
+      "executable": true,
+      "logical_qubits": 6,
+      "physical_qubits": 9,
+      "logical_cx": 18,
+      "cx": 24,
+      "one_q_gates": 57,
+      "depth": 37,
+      "two_q_depth": 18,
+      "swaps": 2,
+      "cx_overhead": 6
+    }
+  }
+]

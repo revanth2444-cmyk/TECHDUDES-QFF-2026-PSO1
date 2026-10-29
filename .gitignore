@@ -1,0 +1,19 @@
+﻿# Python virtual environment
+.venv/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Jupyter temporary/runtime files
+.ipynb_checkpoints/
+main_executed.ipynb
+
+# Temporary setup scripts
+_create_notebook.py
+_notebook_cell1.py
+
+# Local environment secrets
+.env
+.env.*
+!.env.example

@@ -1,0 +1,46 @@
+{
+  "processor": "Processor B",
+  "noisy": false,
+  "shots": 4096,
+  "seed_simulator": 42,
+  "exact_optimum": 22,
+  "best_initialization_seed": 2,
+  "gamma": 0.8130432230576655,
+  "beta": 1.1154984615119183,
+  "mean_cut": 15.66064453125,
+  "sample_std_cut": 4.076266094643934,
+  "best_sampled_cut": 22,
+  "approx_ratio": 0.7118474786931818,
+  "p_opt": 0.072998046875,
+  "optimal_bitstrings": [
+    [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1
+    ]
+  ],
+  "circuit_metrics": {
+    "processor": "Processor B",
+    "executable": true,
+    "logical_qubits": 6,
+    "physical_qubits": 9,
+    "logical_cx": 18,
+    "cx": 21,
+    "one_q_gates": 57,
+    "depth": 37,
+    "two_q_depth": 17,
+    "swaps": 1,
+    "cx_overhead": 3
+  }
+}

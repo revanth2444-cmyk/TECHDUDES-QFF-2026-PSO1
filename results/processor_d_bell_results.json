@@ -1,0 +1,82 @@
+[
+  {
+    "processor": "Processor D",
+    "pair": [
+      0,
+      1
+    ],
+    "noisy": false,
+    "shots": 4096,
+    "pair_distance": 1,
+    "XX": 1.0,
+    "XX_se": 0.0,
+    "YY": -1.0,
+    "YY_se": 0.0,
+    "ZZ": 1.0,
+    "ZZ_se": 0.0,
+    "cx": 1,
+    "fidelity": 1.0,
+    "fidelity_se": 0.0,
+    "pair_type": "adjacent"
+  },
+  {
+    "processor": "Processor D",
+    "pair": [
+      0,
+      1
+    ],
+    "noisy": true,
+    "shots": 4096,
+    "pair_distance": 1,
+    "XX": 0.94580078125,
+    "XX_se": 0.005074178326602111,
+    "YY": -0.9521484375,
+    "YY_se": 0.004775562205284335,
+    "ZZ": 0.955078125,
+    "ZZ_se": 0.004630533407219104,
+    "cx": 1,
+    "fidelity": 0.9632568359375,
+    "fidelity_se": 0.0020915771516679545,
+    "pair_type": "adjacent"
+  },
+  {
+    "processor": "Processor D",
+    "pair": [
+      0,
+      8
+    ],
+    "noisy": false,
+    "shots": 4096,
+    "pair_distance": 4,
+    "XX": 1.0,
+    "XX_se": 0.0,
+    "YY": -1.0,
+    "YY_se": 0.0,
+    "ZZ": 1.0,
+    "ZZ_se": 0.0,
+    "cx": 10,
+    "fidelity": 1.0,
+    "fidelity_se": 0.0,
+    "pair_type": "farthest"
+  },
+  {
+    "processor": "Processor D",
+    "pair": [
+      0,
+      8
+    ],
+    "noisy": true,
+    "shots": 4096,
+    "pair_distance": 4,
+    "XX": 0.921875,
+    "XX_se": 0.006054490609197874,
+    "YY": -0.90771484375,
+    "YY_se": 0.006556056405698882,
+    "ZZ": 0.9384765625,
+    "ZZ_se": 0.005395983334123139,
+    "cx": 10,
+    "fidelity": 0.9420166015625,
+    "fidelity_se": 0.0026071460482885453,
+    "pair_type": "farthest"
+  }
+]
