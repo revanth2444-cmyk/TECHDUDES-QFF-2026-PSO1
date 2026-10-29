@@ -26,8 +26,7 @@ The six-vertex problem contains nine weighted edges. Exhaustive enumeration of a
 
 
 
-Processor A has five physical qubits and cannot execute the six-logical-qubit problem. Processors B and D each provide nine physical qubits and are evaluated under ideal and noisy simulation conditions. Processor D uses a custom connected topology with twelve couplings and maximum degree three.
-
+Processor A has five physical qubits and cannot execute the six-logical-qubit problem. Processors B and D each provide nine physical qubits and are evaluated under ideal and noisy simulation conditions. Processor D uses a custom connected topology with twelve couplings and maximum degree four, satisfying the challenge's permitted maximum degree.
 
 
 The observed mean cut values are 15.6606 and 15.4326 for Processor B under ideal and noisy conditions, respectively. For Processor D, the corresponding values are 15.5720 and 15.3633. The results show a reduction in mean cut under the configured noise model for both executable processors. Bell-state experiments also show lower noisy fidelity for the selected farthest pair than for the adjacent pair on Processor D.
@@ -50,11 +49,11 @@ Let \(x\_i\\in\\{0,1\\}\) denote the group assignment of vertex \(i\), and let \
 
 
 
-\\\[
+\[
 
 C(x)=\\sum\_{(i,j)\\in E}w\_{ij}|x\_i-x\_j|.
 
-\\]
+\]
 
 
 
@@ -144,7 +143,7 @@ Processor B has nine physical qubits and uses the supplied challenge topology. I
 
 ### 3.3 Processor D
 
-Processor D was designed as a custom nine-qubit coupling topology to support the six-logical-qubit Max-Cut experiment while satisfying the challenge's connectivity constraints.The topology contains twelve couplings, is connected, and has a maximum vertex degree of four, satisfying the challenge's permitted maximum degree of four.
+Processor D was designed as a custom nine-qubit coupling topology to support the six-logical-qubit Max-Cut experiment while satisfying the challenge's connectivity constraints. The topology contains twelve couplings, is connected, and has a maximum vertex degree of four, satisfying the challenge's permitted maximum degree.
 
 The design provides more physical qubits than the six required by the logical problem, giving the transpiler additional placement options when mapping the circuit to the coupling graph. Connectivity allows interactions between different parts of the topology to be routed through available couplings, although the resulting CX and SWAP counts depend on the particular mapping and circuit. The topology therefore provides a useful test case for investigating the relationship between connectivity, routing overhead, and noisy simulation performance.
 
@@ -152,6 +151,9 @@ The configured basis gates are `rz`, `sx`, `x`, and `cx`. The single-qubit, two-
 
 The configuration is stored in `processors/processor_D.json`. The final configuration must remain fixed across the reported Processor D benchmarks so that the coupling graph, noise settings, compiled resource counts, and simulation results remain consistent. The topology is evaluated through both QAOA performance and Bell-state experiments rather than assumed to be superior based on connectivity alone.
 
+**Figure 2. Processor D coupling topology.** The diagram shows the nine physical qubits and the couplings defined in the final processor configuration.
+
+![Processor D coupling topology](results/figures/processor_D_coupling.png)
 
 ### 3.4 Noise and Reproducibility
 
@@ -189,7 +191,9 @@ The following table summarizes the measured results for the executable processor
 
 | D | Noisy | 15.3633 | 4.2813 | 0.6983 | 22 | 0.0671 |
 
+**Figure 1. Optimal Max-Cut partition for the PS-O1 instance.** The two node colors represent the two groups in the optimal assignment, with cut value 22.
 
+![Optimal Max-Cut partition](results/figures/ps_o1_optimal_cut.png)
 
 Both executable processors sampled an optimal cut in their ideal and noisy evaluations. However, the optimal-cut probabilities are approximately 6.7% to 7.3%, meaning that most individual measurements did not produce an optimal assignment.
 
