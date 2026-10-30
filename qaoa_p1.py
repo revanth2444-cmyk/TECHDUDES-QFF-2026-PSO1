@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 import csv
 import json
 import numpy as np
@@ -137,7 +137,6 @@ for seed in SEEDS:
         "ideal_expected_cut": ideal_expectation,
         "approx_ratio": ideal_expectation / C_STAR,
         "optimizer_evals": int(result.nfev),
-        "success": None,
     })
 
 

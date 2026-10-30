@@ -314,7 +314,7 @@ Five QAOA initializations were evaluated using seeds 0 through 4. The mean ideal
 
 
 
-The population standard deviation of the five approximation ratios was approximately 0.00125. Seed 2 achieved the highest ideal expected-cut ratio among the five tested initializations.
+The sample standard deviation of the five approximation ratios was approximately 0.001399. Seed 2 achieved the highest ideal expected-cut ratio (0.707163) among the five tested initializations. Seed 2 achieved the highest ideal expected-cut ratio among the five tested initializations.
 
 
 
