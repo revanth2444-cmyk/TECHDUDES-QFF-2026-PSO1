@@ -136,7 +136,7 @@ for seed in SEEDS:
         "beta": float(beta_best),
         "ideal_expected_cut": ideal_expectation,
         "approx_ratio": ideal_expectation / C_STAR,
-        "optimizer_evals": int(result.nfev),
+                "optimizer_evals": int(result.nfev),
     })
 
 
