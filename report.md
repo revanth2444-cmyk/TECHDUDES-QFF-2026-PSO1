@@ -149,6 +149,8 @@ The design provides more physical qubits than the six required by the logical pr
 
 The configured basis gates are `rz`, `sx`, `x`, and `cx`. The single-qubit, two-qubit, and readout error probabilities are 0.001, 0.005, and 0.01, respectively, matching the configured challenge noise levels. These settings make it possible to compare Processor D with the supplied Processor B under the same stated noise assumptions.
 
+**Measured design motivation and trade-off:** Processor B provides the reference topology for the six-logical-qubit QAOA circuit. Processor D was designed with nine physical qubits and twelve connected couplings to provide additional placement and routing options while respecting the maximum-degree constraint. However, the compiled results show that this topology did not reduce routing overhead for the tested instance: Processor D required 24 transpiled CX gates and two SWAPs, compared with 21 CX gates and one SWAP on Processor B. Its two-qubit depth was also slightly higher (18 versus 17). Thus, the design offers additional connectivity and physical-qubit capacity, but the measured experiment does not demonstrate a resource-efficiency improvement over Processor B.
+
 The configuration is stored in `processors/processor_D.json`. The final configuration must remain fixed across the reported Processor D benchmarks so that the coupling graph, noise settings, compiled resource counts, and simulation results remain consistent. The topology is evaluated through both QAOA performance and Bell-state experiments rather than assumed to be superior based on connectivity alone.
 
 **Figure 2. Processor D coupling topology.** The diagram shows the nine physical qubits and the couplings defined in the final processor configuration.
