@@ -137,7 +137,7 @@ for seed in SEEDS:
         "ideal_expected_cut": ideal_expectation,
         "approx_ratio": ideal_expectation / C_STAR,
         "optimizer_evals": int(result.nfev),
-        "success": None,
+        "success": bool(result.success),
     })
 
 
