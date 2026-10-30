@@ -177,7 +177,7 @@ These results depend on the configured simulator and noise model. They are not m
 
 The following table summarizes the measured results for the executable processors.
 
-
+Parameter transfer and fairness of comparison: The QAOA (p=1) parameters ((\gamma,\beta)) were optimized using Processor B and then held fixed when evaluating Processor D. This provides a controlled cross-processor comparison under the same logical QAOA parameters. Processor D was not independently optimized in this evaluation; therefore, its results should be interpreted as a fixed-parameter hardware-topology and noise comparison rather than its best achievable QAOA performance.
 
 | Processor | Condition | Mean cut | Sample standard deviation | Approximation ratio | Best cut | Best-cut ratio | Optimal-cut probability |
 
