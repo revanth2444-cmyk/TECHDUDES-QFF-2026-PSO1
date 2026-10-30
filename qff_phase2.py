@@ -208,44 +208,144 @@ def load_processor(path: str) -> dict:
     return p
 
 
+
 def validate_processor_d(p: dict, required_qubits: int) -> list:
-    """Returns a list of rule violations (empty list = valid)."""
+    """Validate Processor D against the challenge constraints.
+
+    Returns a list of validation errors. An empty list means valid.
+    Malformed input is reported instead of causing an exception.
+    """
     errs = []
+
+    if not isinstance(p, dict):
+        return ["processor configuration must be a dictionary"]
+
+    # Validate required logical capacity and physical-qubit limit.
     n = p.get("num_qubits")
-    if not isinstance(n, int) or n < required_qubits or n > D_MAX_QUBITS:
-        errs.append(f"num_qubits must be an integer in [{required_qubits}, {D_MAX_QUBITS}]")
-        return errs
-    if set(p.get("basis_gates", [])) != set(BASIS_GATES):
-        errs.append(f"basis_gates must be exactly {BASIS_GATES}")
+
+    if isinstance(n, bool) or not isinstance(n, int):
+        return ["num_qubits must be an integer"]
+
+    if not isinstance(required_qubits, int) or isinstance(required_qubits, bool):
+        return ["required_qubits must be an integer"]
+
+    if required_qubits < 1:
+        return ["required_qubits must be at least 1"]
+
+    if n < required_qubits or n > D_MAX_QUBITS:
+        return [
+            f"num_qubits must be in [{required_qubits}, {D_MAX_QUBITS}]"
+        ]
+
+    #
+    # Validate basis gates.
+    basis = p.get("basis_gates")
+
+    if (
+        not isinstance(basis, list)
+        or not all(isinstance(gate, str) for gate in basis)
+        or set(basis) != set(BASIS_GATES)
+    ):
+        errs.append(f"basis_gates must contain exactly {BASIS_GATES}")
+
+    # Validate coupling edges.
+
+    # Validate coupling edges.
+    edges = p.get("edges")
+
+    if not isinstance(edges, list):
+        errs.append("edges must be a list")
+        edges = []
+
     deg = {q: 0 for q in range(n)}
     seen = set()
-    for a, b in p.get("edges", []):
+    valid_edges = []
+
+    for index, edge in enumerate(edges):
+        if not isinstance(edge, (list, tuple)) or len(edge) != 2:
+            errs.append(f"edge at index {index} must contain exactly two endpoints")
+            continue
+
+        a, b = edge
+
+        if (
+            isinstance(a, bool) or not isinstance(a, int)
+            or isinstance(b, bool) or not isinstance(b, int)
+        ):
+            errs.append(f"edge at index {index} must use integer endpoints")
+            continue
+
         if a == b or not (0 <= a < n and 0 <= b < n):
             errs.append(f"invalid edge {(a, b)}")
             continue
+
         key = tuple(sorted((a, b)))
+
         if key in seen:
             errs.append(f"duplicate edge {key}")
+            continue
+
         seen.add(key)
+        valid_edges.append(key)
         deg[a] += 1
         deg[b] += 1
-    hi = [q for q, d in deg.items() if d > D_MAX_DEGREE]
-    if hi:
-        errs.append(f"qubits {hi} exceed max degree {D_MAX_DEGREE}")
-    adj = {q: set() for q in range(n)}
-    for a, b in seen:
-        adj[a].add(b)
-        adj[b].add(a)
-    reach, dq = {0}, deque([0])
-    while dq:
-        for nb in adj[dq.popleft()]:
-            if nb not in reach:
-                reach.add(nb)
-                dq.append(nb)
-    if len(reach) != n:
+
+    # Validate maximum degree.
+    high_degree = [
+        q for q, degree in deg.items()
+        if degree > D_MAX_DEGREE
+    ]
+
+    if high_degree:
+        errs.append(
+            f"qubits {high_degree} exceed max degree {D_MAX_DEGREE}"
+        )
+
+    # Validate connectivity using only valid edges.
+    adjacency = {q: set() for q in range(n)}
+
+    for a, b in valid_edges:
+        adjacency[a].add(b)
+        adjacency[b].add(a)
+
+    reached = {0}
+    queue = deque([0])
+
+    while queue:
+        current = queue.popleft()
+
+        for neighbor in adjacency[current]:
+            if neighbor not in reached:
+                reached.add(neighbor)
+                queue.append(neighbor)
+
+    if len(reached) != n:
         errs.append("coupling graph must be connected")
-    nz = p.get("noise", {})
-    if nz.get("p1", P1_DEPOL) < P1_DEPOL or nz.get("p2", P2_DEPOL) < P2_DEPOL \
-            or nz.get("p_readout", P_READOUT) < P_READOUT:
-        errs.append("noise rates in the JSON may not be lower (better) than the official model")
+
+    # Validate noise model.
+    noise = p.get("noise")
+
+    if not isinstance(noise, dict):
+        errs.append("noise must be a dictionary")
+        noise = {}
+
+    for key, minimum in (
+        ("p1", P1_DEPOL),
+        ("p2", P2_DEPOL),
+        ("p_readout", P_READOUT),
+    ):
+        value = noise.get(key)
+
+        if (
+            isinstance(value, bool)
+            or not isinstance(value, (int, float))
+            or not np.isfinite(value)
+            or value < minimum
+            or value > 1.0
+        ):
+            errs.append(
+                f"noise.{key} must be a finite number "
+                f"between {minimum} and 1.0"
+            )
+
     return errs

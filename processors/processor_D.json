@@ -65,5 +65,5 @@
     "p2": 0.005,
     "p_readout": 0.01
   },
-  "design_rationale": "The connected 9-qubit topology provides 12 couplings with maximum degree 4,supporting six logical qubits while providing multiple routing paths for two-qubit operations. It is designed to avoid the five-qubit capacity bottleneck of Processor A and offer alternative routes for mapping the weighted Max-Cut QAOA circuit."
+  "design_rationale": "The connected 9-qubit topology provides 12 couplings with maximum degree 4, supporting six logical qubits while providing multiple routing paths for two-qubit operations. It is designed to avoid the five-qubit capacity bottleneck of Processor A and offer alternative routes for mapping the weighted Max-Cut QAOA circuit."
 }
