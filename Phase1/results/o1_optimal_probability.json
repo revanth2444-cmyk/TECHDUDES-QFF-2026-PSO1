@@ -1,0 +1,27 @@
+{
+  "instance_name": "O1_REPRODUCIBLE_EXAMPLE_NOT_OFFICIAL",
+  "official_benchmark": false,
+  "seed": 42,
+  "qaoa_reps": 1,
+  "optimizer": "COBYLA",
+  "optimizer_maxiter": 60,
+  "exact_max_cut_value": 24,
+  "number_of_optimal_bitstrings": 2,
+  "optimal_bitstrings_x0_to_x5": [
+    "011010",
+    "100101"
+  ],
+  "qaoa_objective_value": 24.0,
+  "optimal_bitstring_probability": 0.1590103140511437,
+  "optimal_bitstring_probability_percent": 15.901031405114368,
+  "individual_optimal_bitstring_probabilities": {
+    "011010": 0.07950515702557183,
+    "100101": 0.07950515702557186
+  },
+  "probability_method": "Exact optimized statevector; noiseless simulation",
+  "limitations": [
+    "Local example graph, not an official organizer-provided benchmark.",
+    "No hardware noise or shot sampling included.",
+    "This is ideal statevector probability, not hardware-measured success probability."
+  ]
+}

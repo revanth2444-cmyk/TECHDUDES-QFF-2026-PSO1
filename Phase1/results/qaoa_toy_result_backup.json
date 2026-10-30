@@ -1,0 +1,53 @@
+{
+  "instance_name": "TOY_TRIANGLE_NOT_OFFICIAL",
+  "official_benchmark": false,
+  "seed": 42,
+  "qaoa_reps": 1,
+  "optimizer": "COBYLA",
+  "optimizer_maxiter": 50,
+  "sampler": "StatevectorSampler",
+  "logical_qubits": 3,
+  "logical_depth": 6,
+  "compiled_depth": 15,
+  "compiled_two_qubit_gate_count": 9,
+  "compiled_two_qubit_gate_breakdown": {
+    "cx": 9
+  },
+  "explicit_swap_count": 0,
+  "qaoa_objective_value": 5.0,
+  "exact_max_cut_value": 5.0,
+  "qaoa_matches_optimum": true,
+  "python_version": "3.13.16",
+  "qiskit_version": "2.5.2",
+  "scipy_version": "1.18.1",
+  "transpiler_seed": 42,
+  "optimization_level": 0,
+  "hardware_topology": "TOY_LINE_NOT_OFFICIAL",
+  "processor_official": false,
+  "processor_num_qubits": 3,
+  "basis_gates": [
+    "u",
+    "cx",
+    "rz",
+    "sx",
+    "x"
+  ],
+  "coupling_map": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      1
+    ]
+  ]
+}

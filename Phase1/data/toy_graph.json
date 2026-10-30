@@ -1,0 +1,37 @@
+{
+  "instance_name": "TOY_TEST_ONLY_not_official",
+  "nodes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "edges": [
+    {
+      "u": 0,
+      "v": 1,
+      "weight": 2.0
+    },
+    {
+      "u": 0,
+      "v": 2,
+      "weight": 1.0
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "weight": 3.0
+    },
+    {
+      "u": 1,
+      "v": 3,
+      "weight": 2.0
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "weight": 4.0
+    }
+  ],
+  "warning": "TOY TEST INSTANCE ONLY. NOT THE OFFICIAL QFF O1 BENCHMARK."
+}

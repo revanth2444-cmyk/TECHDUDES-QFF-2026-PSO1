@@ -1,0 +1,113 @@
+{
+  "instance_name": "O1_REPRODUCIBLE_EXAMPLE_NOT_OFFICIAL",
+  "official_benchmark": false,
+  "seed": 42,
+  "edges": [
+    {
+      "u": 0,
+      "v": 1,
+      "weight": 2
+    },
+    {
+      "u": 0,
+      "v": 2,
+      "weight": 4
+    },
+    {
+      "u": 0,
+      "v": 5,
+      "weight": 1
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "weight": 3
+    },
+    {
+      "u": 1,
+      "v": 3,
+      "weight": 5
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "weight": 2
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "weight": 1
+    },
+    {
+      "u": 2,
+      "v": 5,
+      "weight": 4
+    },
+    {
+      "u": 3,
+      "v": 4,
+      "weight": 3
+    },
+    {
+      "u": 4,
+      "v": 5,
+      "weight": 5
+    }
+  ],
+  "exact_max_cut_value": 24,
+  "one_exact_optimal_partition": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    0
+  ],
+  "qaoa_reps": 1,
+  "optimizer": "COBYLA",
+  "optimizer_maxiter": 60,
+  "qaoa_objective_value": 24.0,
+  "qaoa_approximation_ratio": 1.0,
+  "logical_qubits": 6,
+  "logical_depth": 10,
+  "processors": [
+    {
+      "processor": "Processor A",
+      "configuration_name": "PROCESSOR_A_PDF_PENDING_APPROVAL",
+      "configuration_status": "PDF-derived; pending organizer approval",
+      "official": false,
+      "physical_qubits": 5,
+      "logical_qubits": 6,
+      "full_six_qubit_circuit_supported": false,
+      "compiled_depth": null,
+      "two_qubit_gate_count": null,
+      "two_qubit_gate_breakdown": null,
+      "explicit_swap_count": null,
+      "note": "Cannot map the full six-qubit circuit: processor has fewer than six qubits."
+    },
+    {
+      "processor": "Processor B",
+      "configuration_name": "PROCESSOR_B_PDF_PENDING_APPROVAL",
+      "configuration_status": "PDF-derived; pending organizer approval",
+      "official": false,
+      "physical_qubits": 9,
+      "logical_qubits": 6,
+      "full_six_qubit_circuit_supported": true,
+      "compiled_depth": 43,
+      "two_qubit_gate_count": 38,
+      "two_qubit_gate_breakdown": {
+        "cx": 38
+      },
+      "explicit_swap_count": 0,
+      "note": "Compiled with the documented topology and assumed basis gates; noise not simulated."
+    }
+  ],
+  "python_version": "3.13.16",
+  "qiskit_version": "2.5.2",
+  "limitations": [
+    "Graph is a reproducible local example, not an organizer-specified graph.",
+    "Processor configurations are PDF-derived and pending approval.",
+    "Basis gates are development assumptions; noise is not simulated.",
+    "Processor A cannot run the full six-qubit circuit."
+  ]
+}

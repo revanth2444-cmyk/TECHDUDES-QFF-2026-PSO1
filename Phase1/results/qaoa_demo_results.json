@@ -1,0 +1,16 @@
+﻿{
+  "experiment": "QAOA toy triangle Max-Cut",
+  "official_benchmark": false,
+  "status": "simulation completed",
+  "qaoa_objective": 5.0,
+  "exact_max_cut_value": 5.0,
+  "qaoa_result_matches_optimum": true,
+  "best_bitstring": [0, 1, 0],
+  "logical_qubits": 3,
+  "logical_circuit_depth": 6,
+  "compiled_circuit_depth": 15,
+  "compiled_cx_count": 9,
+  "explicit_swap_count": 0,
+  "illustrative_topology": "three-qubit line",
+  "warning": "Toy result only; not official Processor A/B benchmark data."
+}

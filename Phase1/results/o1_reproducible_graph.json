@@ -1,0 +1,66 @@
+{
+  "instance_name": "O1_REPRODUCIBLE_EXAMPLE_NOT_OFFICIAL",
+  "official_benchmark": false,
+  "seed": 42,
+  "nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "edges": [
+    {
+      "u": 0,
+      "v": 1,
+      "weight": 2
+    },
+    {
+      "u": 0,
+      "v": 2,
+      "weight": 4
+    },
+    {
+      "u": 0,
+      "v": 5,
+      "weight": 1
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "weight": 3
+    },
+    {
+      "u": 1,
+      "v": 3,
+      "weight": 5
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "weight": 2
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "weight": 1
+    },
+    {
+      "u": 2,
+      "v": 5,
+      "weight": 4
+    },
+    {
+      "u": 3,
+      "v": 4,
+      "weight": 3
+    },
+    {
+      "u": 4,
+      "v": 5,
+      "weight": 5
+    }
+  ],
+  "note": "Locally chosen reproducible example; not an organizer-provided fixed graph."
+}

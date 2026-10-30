@@ -1,0 +1,73 @@
+{
+  "instance_name": "FIVE_NODE_SUBPROBLEM_NOT_OFFICIAL",
+  "official_benchmark": false,
+  "edges": [
+    {
+      "u": 0,
+      "v": 1,
+      "weight": 2
+    },
+    {
+      "u": 0,
+      "v": 2,
+      "weight": 4
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "weight": 3
+    },
+    {
+      "u": 1,
+      "v": 3,
+      "weight": 5
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "weight": 2
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "weight": 1
+    },
+    {
+      "u": 3,
+      "v": 4,
+      "weight": 3
+    }
+  ],
+  "exact_max_cut_value": 15,
+  "qaoa_objective_value": 15.0,
+  "qaoa_approximation_ratio": 1.0,
+  "logical_qubits": 5,
+  "logical_depth": 9,
+  "processors": [
+    {
+      "processor": "Processor A",
+      "physical_qubits": 5,
+      "configuration_status": "PDF-derived; pending organizer approval",
+      "compiled_depth": 34,
+      "two_qubit_gate_count": 26,
+      "two_qubit_gate_breakdown": {
+        "cx": 26
+      },
+      "explicit_swap_count": 0,
+      "note": "SWAPs may be decomposed into basis gates; explicit swap count alone does not measure routing overhead."
+    },
+    {
+      "processor": "Processor B",
+      "physical_qubits": 9,
+      "configuration_status": "PDF-derived; pending organizer approval",
+      "compiled_depth": 30,
+      "two_qubit_gate_count": 23,
+      "two_qubit_gate_breakdown": {
+        "cx": 23
+      },
+      "explicit_swap_count": 0,
+      "note": "SWAPs may be decomposed into basis gates; explicit swap count alone does not measure routing overhead."
+    }
+  ],
+  "noise_simulated": false
+}

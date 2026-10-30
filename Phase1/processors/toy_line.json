@@ -1,0 +1,15 @@
+﻿{
+  "processor_name": "TOY_LINE_NOT_OFFICIAL",
+  "official": false,
+  "description": "Illustrative three-qubit linear connectivity for development tests only",
+  "num_qubits": 3,
+  "coupling_map": [
+    [0, 1],
+    [1, 0],
+    [1, 2],
+    [2, 1]
+  ],
+  "basis_gates": ["u", "cx", "rz", "sx", "x"],
+  "optimization_level": 0,
+  "transpiler_seed": 42
+}
